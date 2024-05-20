@@ -2,32 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'Kumbh_Sans';
+  src:
+  url('/Fonts/Kumbh_Sans/KumbhSans-VariableFont_YOPQ,wght.ttf')
+  format('truetype');
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src:
+  url('/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 400, 500, 600, 700, 800, 900;
+}
+
+/* :root {
+  --foreground-hex: var(deepBlue);
+  --background-start-hex: var(deepBlue);
+  --background-end-hex: var(lightGreyBlue);
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-hex: 255, 255, 255;
+    --background-start-hex: 0, 0, 0;
+    --background-end-hex: 0, 0, 0;
+  }
+}
+
+@media (prefers-color-scheme: red) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+* {
+  /* border: 1px solid red; */
+  font-family: Kumbh_Sans;
+  font-weight: 400;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #ffffff;
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+     #2F4E69 
     )
-    rgb(var(--background-start-rgb));
+    #081521;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  h2.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #88A0B5; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto 0 0; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 1.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
 }
+
