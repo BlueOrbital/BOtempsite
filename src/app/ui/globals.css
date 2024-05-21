@@ -47,6 +47,8 @@
 
 body {
   color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: scroll;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -67,19 +69,35 @@ body {
   
   /* The typewriter cursor effect */
   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+    from, to { border-color: transparent; }
+    50% { border-color: #88A0B5; }
   }
 
-  h2.typewriter {
+  @keyframes fade-in {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  h2.typewriter,
+  h2.dotdot {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid #88A0B5; /* The typewriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto 0 0; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
+    width: 0;
+    max-width: fit-content;
+  }
+
+  h2.typewriter {
+    border-right: 1px solid #88A0B5;
     animation: 
-      typing 1.5s steps(40, end),
-      blink-caret .75s step-end infinite;
+      typing 2.5s steps(100, end) forwards 1s,
+      blink-caret .75s step-end infinite 0s;
+  }
+  
+
+  h2.dotdot {
+    animation: 
+      typing 5s steps(1000000, end) 0s infinite alternate;
   }
 }
-

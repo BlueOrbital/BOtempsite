@@ -2,35 +2,34 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-row max-w-100vw h-fit-content items-start justify-center p-24">
-      <section className="flex flex-column flex-wrap z-10 h-screen w-full max-w-7xl items-start justify-between">
+    <main className="flex flex-row max-w-100vw h-full min-h-screen p-16 justify-center">
+      <section className="flex flex-column flex-wrap z-10 w-full max-w-7xl content-start items-start justify-start justify-items-start">
         <div className="flex flex-row flex-wrap h-auto w-full items-start justify-center">
           <h1 className="w-full h-full mr-auto font-secondary text-title">
-            Welcome to Blue Orbital
+            Welcome to BlueOrbital
           </h1>
-          <h2 className="w-auto h-full font-main text-sub-title typewriter animate-typing">
-            Bespoke Web Design
+          <h2 className="w-auto h-full font-main text-sub-title typewriter pl-3">
+            Bespoke Web Design.
           </h2>
-          {/* <Image
-            className="w-auto h-auto place-items-center gap-2 p-1 ml-auto"
-            src="/BO_notxt_trans_white .png"
-            alt="Blue Orbital Logo"
-            // className="dark:invert"
-            width={80}
-            height={90}
-            priority
-          /> */}
-        </div>      
-        <div className="radial before:from-white-x-1/3 a-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+        </div>
+        <div className="w-auto h-auto max-w-2/3 mx-auto my-10 self-center">
           <Image
-            className="relative"
+            className="relative animate-fade-in"
             src="/BO_logo_white_trans.png"
             alt="Large Blue Orbital Logo"
-            width={210}
+            width={400}
             height={70}
             priority
           />
         </div>
+        <div className="flex flex-row flex-wrap h-auto w-full items-center justify-center">
+          <h2 className="w-auto h-full font-main text-sub-title pl-3 text-center">
+            Our site is currently in development, come back again soon
+          </h2>
+          <h2 className="inline w-auto h-full font-main text-sub-title dotdot pl-3">
+            ...
+          </h2>
+        </div>     
       </section>
       {/* <section className="z-10 h-screen w-full max-w-5xl items-start justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-centre border-b">
