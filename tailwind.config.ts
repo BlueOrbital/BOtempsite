@@ -39,6 +39,10 @@ const config: Config = {
         "title": "4rem",
         "sub-title": "2.5rem",
       },
+      lineHeight: {
+        "title": "1",
+        "sub-title": "1",
+      },
       borderRadius: {
         "4xl": "2rem",
       },

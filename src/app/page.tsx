@@ -5,14 +5,14 @@ export default function Home() {
     <main className="flex flex-row max-w-100vw h-full min-h-screen p-16 justify-center">
       <section className="flex flex-column flex-wrap z-10 w-full max-w-7xl content-start items-start justify-start justify-items-start">
         <div className="flex flex-row flex-wrap h-auto w-full items-start justify-center">
-          <h1 className="w-full h-full mr-auto font-secondary text-title">
+          <h1 className="w-full h-full mr-auto font-secondary text-title lg:text-left sm:text-center sm:mx-auto">
             Welcome to BlueOrbital
           </h1>
-          <h2 className="w-auto h-full font-main text-sub-title typewriter pl-3">
+          <h2 className="w-auto h-full font-main text-sub-title lg:typewriter lg:pl-3 lg:border-t-0 sm:text-center sm:mx-auto sm:border-t-2">
             Bespoke Web Design.
           </h2>
         </div>
-        <div className="w-auto h-auto max-w-2/3 mx-auto my-10 self-center">
+        <div className="w-auto h-auto max-w-2/3 mx-auto mt-16 mb-12 self-center">
           <Image
             className="relative animate-fade-in"
             src="/BO_logo_white_trans.png"
@@ -23,10 +23,10 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-row flex-wrap h-auto w-full items-center justify-center">
-          <h2 className="w-auto h-full font-main text-sub-title pl-3 text-center">
+          <h2 className="w-auto h-full font-main text-3xl pl-3 xl:text-left sm:text-center">
             Our site is currently in development, come back again soon
           </h2>
-          <h2 className="inline w-auto h-full font-main text-sub-title dotdot pl-3">
+          <h2 className="w-auto h-full font-main text-3xl dotdot pl-3 text-center self-center">
             ...
           </h2>
         </div>     

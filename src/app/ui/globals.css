@@ -79,25 +79,34 @@ body {
   }
 
   h2.typewriter,
+  h2.typewriterMobile,
   h2.dotdot {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto 0 0; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     width: 0;
     max-width: fit-content;
   }
 
-  h2.typewriter {
+  h2.typewriter,
+  h2.typewriterMobile {
     border-right: 1px solid #88A0B5;
     animation: 
       typing 2.5s steps(100, end) forwards 1s,
       blink-caret .75s step-end infinite 0s;
   }
+
+  h2.typewriter {
+    margin: 0 auto 0 0;
+  }
   
+  h2.typewriterMobile {
+    margin: 0 auto;
+  }
 
   h2.dotdot {
+    margin: 0 0 0 0; /* Gives that scrolling effect as the typing happens */
     animation: 
-      typing 5s steps(1000000, end) 0s infinite alternate;
+      typing 5s steps(100000000, end) 0s infinite alternate;
   }
 }
