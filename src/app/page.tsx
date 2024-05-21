@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row flex-wrap h-auto w-full items-center justify-center">
           <h2 className="w-full h-full font-main text-3xl text-center mb-8">
-            Our site is currently in development, try back again soon
+            Our site is currently in development - see you soon
           </h2>
           <h2 className="w-auto h-full font-main text-3xl dotdot pl-3 text-center self-center">
             ...
