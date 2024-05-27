@@ -18,6 +18,85 @@
   font-weight: 400, 500, 600, 700, 800, 900;
 }
 
+@font-face {
+  font-family: 'Raleway';
+  src:
+  url('/Fonts/Raleway/Raleway-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src:
+  url('/Fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DM_Sans';
+  src:
+  url('/Fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf')
+  format('truetype');
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM_Sans';
+  src:
+  url('/Fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf')
+  format('truetype');
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src:
+  url('/Fonts/Quicksand/Quicksand-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 300, 400, 500, 600, 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu_Sans_Mono';
+  src:
+  url('/Fonts/Ubuntu_Sans_Mono/UbuntuSansMono-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 400, 500, 600, 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu_Sans_Mono';
+  src:
+  url('/Fonts/Ubuntu_Sans_Mono/UbuntuSansMono-Italic-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 400, 500, 600, 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Kode_Mono';
+  src:
+  url('/Fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 400, 500, 600, 700;
+}
+
+@font-face {
+  font-family: 'Ojuju';
+  src:
+  url('/Fonts/Ojuju/Ojuju-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: 200, 300, 400, 500, 600, 700;
+}
+
 /* :root {
   --foreground-hex: var(deepBlue);
   --background-start-hex: var(deepBlue);
@@ -63,8 +142,21 @@ body {
   }
 
   @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    0% {
+      width: 0;
+    }
+    25% {
+      width: 100%;
+    }
+    50% {
+      width: 100%;
+    }
+    75% {
+      width: 0%;
+    }
+    100% {
+      width:0;
+    }
   }
 
   @keyframes dotdotdot{
@@ -97,12 +189,12 @@ body {
   h2.typewriterMobile {
     border-right: 1px solid #88A0B5;
     animation: 
-      typing 2.5s steps(100, end) forwards 1s,
-      blink-caret .75s step-end infinite 0s;
+      typing 10s steps(1000) infinite,
+      blink-caret 1s step-end infinite 0s;
   }
 
   h2.typewriter {
-    margin: 0 auto 0 0;
+    margin: 24px auto 0 0;
   }
   
   h2.typewriterMobile {

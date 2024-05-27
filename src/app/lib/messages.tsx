@@ -7,3 +7,13 @@ export const homeMessages = [
     "Professional Web Services",
     "Custom Domains and Hosting"
 ]
+
+export const fontStyles = [
+    "font-kumbh",
+    "font-raleway",
+    "font-dm",
+    "font-quicksand",
+    "font-ubuntu",
+    "font-kode",
+    "font-ojuju",
+]

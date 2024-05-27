@@ -1,3 +1,4 @@
+import { DM_Sans } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -27,8 +28,14 @@ const config: Config = {
       lightGreyBlue: "#C5D8E8",
     },
     fontFamily: {
-      main: ["Kumbh_Sans", "sans-serif"],
-      secondary: ["Orbitron", "sans-serif"],
+      kumbh: ["Kumbh_Sans", "sans-serif"],
+      orbitron: ["Orbitron", "sans-serif"],
+      raleway: ["Raleway", "sans-serif"],
+      dm: ["DM_Sans", "sans-serif"],
+      quicksand: ["Quicksand", "sans-serif"],
+      ubuntu: ["Ubuntu_Sans_Mono", "sans-serif"],
+      kode: ["Kode_Mono", "sans_serif"],
+      ojuju: ["Ojuju", "sans_serif"],
     },
     extend: {
       spacing: {

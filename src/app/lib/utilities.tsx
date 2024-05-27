@@ -16,14 +16,13 @@ export function doRandomiseInterval(
         // }
         for (let i = 1; i > 0; i++) {
           if (newNumber !== prevState) {
-            console.log('New Message Found!');
             break;
           } else {
             newNumber = Math.floor(Math.random() * range);
             console.log('Duplicate found!');
-            // debug.new = newNumber;
-            // console.log(debug);
           }
+          // debug.new = newNumber;
+          // console.log(debug);
         }
         // console.log('Test');
         // console.log(debug);

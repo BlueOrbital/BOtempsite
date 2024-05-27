@@ -1,41 +1,50 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from "react";
-import { homeMessages } from "./lib/messages";
+import { homeMessages, fontStyles } from "./lib/messages";
 import { doRandomiseInterval } from "./lib/utilities";
 
 export default function Home() {
-  const [ticket, setTicket] = useState(0);
+  const [message, setMessage] = useState(0);
+  const [font, setFont] = useState(0);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-    
+    let interval1: NodeJS.Timeout;
+    let interval2: NodeJS.Timeout;
+
     const startInterval = () => {
-      intervalId = doRandomiseInterval(homeMessages.length, 10000, setTicket); // Set up the interval
+      interval1 = doRandomiseInterval(homeMessages.length, 10000, setMessage); // Set up the first interval
+      interval2 = doRandomiseInterval(fontStyles.length, 10000, setFont); // Set up the second interval
     };
-    
+
     setTimeout(() => {
       startInterval();
     }, 7500);
-    
+
     return () => {
-      clearInterval(intervalId); // Clean up the interval when the component unmounts
+      clearInterval(interval1); // Clean up the interval when the component unmounts
+      clearInterval(interval2);
     };
   }, []);
-  
-  useEffect(() => {
-    console.log(ticket);
-  }, [ticket])
+
+  // useEffect(() => {
+  //   console.log(message);
+  //   console.log(font);
+
+
+  // }, [message, font]);
 
   return (
     <main className="flex flex-row max-w-100vw h-full min-h-screen p-16 justify-center">
       <section className="flex flex-column flex-wrap z-10 w-full items-start justify-start justify-items-start">
         <div className="flex flex-row flex-wrap relative top-1/4 h-auto w-full">
-          <h1 className="w-full h-full mr-auto font-secondary text-6xl lg:text-left sm:text-center sm:mx-auto">
-            Weclome to BlueOrbital
+          <h1 className="w-full h-full mr-auto font-orbitron font-normal text-6xl tracking-wider lg:text-left sm:text-center sm:mx-auto">
+            Welcome to BlueOrbital
           </h1>
-          <h2 className="w-auto h-full font-main text-5xl leading-normal lg:typewriter lg:pl-3 lg:border-t-0 sm:text-center sm:mx-auto sm:border-t-2">
-            {homeMessages[ticket]}
+          <h2
+            className={`w-auto h-full ${fontStyles[font]} text-5xl font-light leading-normal tracking-tight lg:typewriter lg:pl-3 lg:border-t-0 sm:text-center sm:mx-auto sm:border-t-2`}
+          >
+            {homeMessages[message]}
           </h2>
         </div>
       </section>
