@@ -1,42 +1,49 @@
-import Image from "next/image";
+'use client'
+
+import { useEffect, useState } from "react";
+import { homeMessages } from "./lib/messages";
+import { doRandomiseInterval } from "./lib/utilities";
 
 export default function Home() {
+  const [ticket, setTicket] = useState(0);
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+    
+    const startInterval = () => {
+      intervalId = doRandomiseInterval(homeMessages.length, 10000, setTicket); // Set up the interval
+    };
+    
+    setTimeout(() => {
+      startInterval();
+    }, 7500);
+    
+    return () => {
+      clearInterval(intervalId); // Clean up the interval when the component unmounts
+    };
+  }, []);
+  
+  useEffect(() => {
+    console.log(ticket);
+  }, [ticket])
+
   return (
     <main className="flex flex-row max-w-100vw h-full min-h-screen p-16 justify-center">
-      <section className="flex flex-column flex-wrap z-10 w-full max-w-7xl content-start items-start justify-start justify-items-start">
-        <div className="flex flex-row flex-wrap h-auto w-full items-start justify-center">
-          <h1 className="w-full h-full mr-auto font-secondary text-title lg:text-left sm:text-center sm:mx-auto">
-            Welcome to BlueOrbital
+      <section className="flex flex-column flex-wrap z-10 w-full items-start justify-start justify-items-start">
+        <div className="flex flex-row flex-wrap relative top-1/4 h-auto w-full">
+          <h1 className="w-full h-full mr-auto font-secondary text-6xl lg:text-left sm:text-center sm:mx-auto">
+            Weclome to BlueOrbital
           </h1>
-          <h2 className="w-auto h-full font-main text-sub-title lg:typewriter lg:pl-3 lg:border-t-0 sm:text-center sm:mx-auto sm:border-t-2">
-            Bespoke Web Design.
+          <h2 className="w-auto h-full font-main text-5xl leading-normal lg:typewriter lg:pl-3 lg:border-t-0 sm:text-center sm:mx-auto sm:border-t-2">
+            {homeMessages[ticket]}
           </h2>
         </div>
-        <div className="w-auto h-auto max-w-2/3 mx-auto my-12 self-center">
-          <Image
-            className="relative animate-fade-in"
-            src="/BO_logo_white_trans.png"
-            alt="Large Blue Orbital Logo"
-            width={400}
-            height={70}
-            priority
-          />
-        </div>
-        <div className="flex flex-row flex-wrap h-auto w-full items-center justify-center">
-          <h2 className="w-full h-full font-main text-3xl text-center mb-8">
-            Our site is currently in development - see you soon
-          </h2>
-          <h2 className="w-auto h-full font-main text-3xl dotdot pl-3 text-center self-center">
-            ...
-          </h2>
-        </div>     
       </section>
       {/* <section className="z-10 h-screen w-full max-w-5xl items-start justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-centre border-b">
           Our site is currently under development, but we are not far off now... 
         </p>
       </section> */}
-
 
       {/*
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
