@@ -1,16 +1,17 @@
 export const homeMessages = [
     "Bespoke Web Design",
-    "E-Commerce Platforms",
+    "E-Commerce Specilaists",
     "Full-Stack Web Devevelopment",
     "Fully Customisable Layouts",
     "Shoppify Set-Up",
     "Professional Web Services",
-    "Custom Domains and Hosting"
+    "Custom Domains and Hosting",
+    "Interactive UI"
 ]
 
 export const fontStyles = [
-    "font-kumbh",
     "font-raleway",
+    "font-kumbh",
     "font-dm",
     "font-quicksand",
     "font-ubuntu",
