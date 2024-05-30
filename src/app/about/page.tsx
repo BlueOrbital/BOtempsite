@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { homeMessages, fontStyles } from "./lib/messages";
-import { doRandomise } from "./lib/utilities";
+import { homeMessages, fontStyles } from "../lib/messages";
+import { doRandomise } from "../lib/utilities";
 
 export default function Home() {
   const [message, setMessage] = useState(0);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./ui/globals.css";
+import NavBar from "./ui/nav/navBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +37,15 @@ export default function RootLayout({
         <meta name="msapplication-TileImage" content="/Favicon/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="fixed w-full h-16 border-b-0 border-b-lightGrey">
+          <NavBar />
+        </header>
+        <main className="flex flex-row max-w-100vw h-full min-h-screen p-16 justify-center">
+          {children}
+        </main>
+        <footer></footer>
+      </body>
     </html>
   );
 }

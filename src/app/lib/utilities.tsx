@@ -1,34 +1,41 @@
-import { SetStateAction, useRef } from "react";
+import { SetStateAction } from "react";
 
-export function doRandomiseInterval(
+export function doRandomise(
   range: number,
-  interval: number,
   setState: React.Dispatch<SetStateAction<number>>,
+  interval?: number,
 ) {
-  const intervalId = setInterval(() => {
-    setState((prevState:number) => {
-        // console.log('Start');
-        let newNumber = Math.floor(Math.random() * range);
-        // let debug = {
-        //     "prev": prevState,
-        //     "initial": newNumber,
-        //     "new": 0,
-        // }
-        for (let i = 1; i > 0; i++) {
-          if (newNumber !== prevState) {
-            break;
-          } else {
-            newNumber = Math.floor(Math.random() * range);
-            console.log('Duplicate found!');
+  if (interval !== undefined) {
+    const intervalId = setInterval(() => {
+      setState((prevState:number) => {
+          let newNumber = Math.floor(Math.random() * range);
+          for (let i = 1; i > 0; i++) {
+            if (newNumber !== prevState) {
+              break;
+            } else {
+              newNumber = Math.floor(Math.random() * range);
+              console.log('Duplicate found!');
+            }
           }
-          // debug.new = newNumber;
-          // console.log(debug);
+          return newNumber;
+        });
+      }, interval);
+    return intervalId;
+  } else {
+    setState((prevState:number) => {
+      console.log('Started non-interval change');
+      let newNumber = Math.floor(Math.random() * range);
+      for (let i = 1; i > 0; i++) {
+        if (newNumber !== prevState) {
+          console.log('Match found - will break');
+          break;
+        } else {
+          newNumber = Math.floor(Math.random() * range);
+          console.log('Duplicate found!');
         }
-        // console.log('Test');
-        // console.log(debug);
-        return newNumber;
-      });
-    }, interval);
-
-  return intervalId;
+      }
+      console.log(`Should set as: ${newNumber}`);
+      return newNumber;
+    });
+  }
 }
