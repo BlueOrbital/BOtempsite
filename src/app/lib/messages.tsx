@@ -1,12 +1,13 @@
 export const homeMessages = [
     "Bespoke Web Design",
-    "E-Commerce Specilaists",
-    "Full-Stack Web Devevelopment",
-    "Fully Customisable Layouts",
-    "Shoppify Set-Up",
+    "E-Commerce Specialists",
+    "Full-Stack Web Applications",
+    "Fully Dynamic Content",
+    "Shoppify, Wordpress, Wix",
     "Professional Web Services",
-    "Custom Domains and Hosting",
-    "Interactive UI"
+    "Custom Domains and Emails",
+    "Online Consultations",
+    "UI/UX Design",
 ]
 
 export const fontStyles = [

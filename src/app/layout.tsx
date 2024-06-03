@@ -38,10 +38,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={inter.className}>
-        <header className="fixed w-full h-16 border-b-0 border-b-lightGrey">
+        <header className="fixed w-full h-16 z-50 px-16 border-b-0 border-b-lightGrey">
           <NavBar />
         </header>
-        <main className="flex flex-row max-w-100vw h-full min-h-screen p-16 justify-center">
+        <main className="flex flex-row flex-wrap max-w-100vw h-auto min-h-screen justify-center">
           {children}
         </main>
         <footer></footer>

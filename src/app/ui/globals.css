@@ -128,12 +128,14 @@ body {
   color: #ffffff;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-     #2F4E69 
-    )
-    #081521;
+  background-color: #081521;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: -0.025rem;
+  line-height: 1.5;
 }
 
 @layer utilities {
@@ -207,3 +209,4 @@ body {
       dotdotdot 4s steps(5) 0s infinite alternate;
   }
 }
+
