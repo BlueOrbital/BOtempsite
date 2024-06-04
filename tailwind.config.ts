@@ -56,8 +56,16 @@ const config: Config = {
       animation: {
         "typing": "typing 1.5s steps(40, end)",
         "blink-caret": "blink-caret .75s step-end infinite",
-        "fade-in": "fade-in 10s ease-in infinite alternate"
+        "fade-in": "fade-in 10s ease-in infinite alternate",
+        "fade-away": "fade-away 1.5s"
       },
+      transition: {
+        "1250": "1250ms",
+        "1500": "1500ms",
+        "1750":"1750ms",
+        "2000":"2000ms",
+        "2500":"2500ms",
+      }
     },
   },
   plugins: [],
