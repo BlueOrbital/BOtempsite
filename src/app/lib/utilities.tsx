@@ -14,7 +14,7 @@ export function doRandomise(
               break;
             } else {
               newNumber = Math.floor(Math.random() * range);
-              console.log('Duplicate found!');
+              // console.log('Duplicate found!');
             }
           }
           return newNumber;
@@ -23,18 +23,18 @@ export function doRandomise(
     return intervalId;
   } else {
     setState((prevState:number) => {
-      console.log('Started non-interval change');
+      // console.log('Started non-interval change');
       let newNumber = Math.floor(Math.random() * range);
       for (let i = 1; i > 0; i++) {
         if (newNumber !== prevState) {
-          console.log('Match found - will break');
+          // console.log('Match found - will break');
           break;
         } else {
           newNumber = Math.floor(Math.random() * range);
-          console.log('Duplicate found!');
+          // console.log('Duplicate found!');
         }
       }
-      console.log(`Should set as: ${newNumber}`);
+      // console.log(`Should set as: ${newNumber}`);
       return newNumber;
     });
   }

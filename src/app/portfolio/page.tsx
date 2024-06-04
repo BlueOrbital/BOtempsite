@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { homeMessages, fontStyles } from "../lib/messages";
+import { homeMessages, fontStyles } from "../lib/staticArrays";
 import { doRandomise } from "../lib/utilities";
 
 export default function Home() {

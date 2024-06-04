@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { homeMessages, fontStyles } from "./lib/messages";
+import { homeMessages, fontStyles } from "./lib/staticArrays";
 import { doRandomise } from "./lib/utilities";
+import colourBox from "./lib/colour-box";
 
 export default function Home() {
   const [message, setMessage] = useState(0);
@@ -44,22 +45,18 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-row z-10 w-full h-auto items-start justify-start justify-items-start p-16">
-        <div className="w-3/5 h-fit">
-          <div className="w-3/4 h-128 rounded bg-gradient-to-br from-midBlue to-midGreyBlue before:animate-fade-in before:block before:h-128 before:rounded before:bg-gradient-to-br before:from-lightBlue before:to-midBlue before:transition before:duration-1000 before:hover:opacity-0">
-          </div>
-        </div>
+        <div className="w-3/5 h-fit">{colourBox()}</div>
         <article className="w-2/5 h-fit">
           <h2 className="mb-5">Impossible, Made Possible</h2>
           <p className="mb-2">
             This is web design. The limit is your imagination.
           </p>
           <p className="mb-2">
-            No more theme restrictions, no more searching for the right color scheme. Get it
-            done properly; get it your way. 
+            No more theme restrictions, no more searching for the right color
+            scheme. Get it done properly; get it your way.
           </p>
           <p className="mb-2">
-            Through the latest frontend
-            technologies, anything is possible.
+            Through the latest frontend technologies, anything is possible.
           </p>
         </article>
       </section>
