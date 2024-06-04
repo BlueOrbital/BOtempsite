@@ -57,7 +57,6 @@ const config: Config = {
         "typing": "typing 1.5s steps(40, end)",
         "blink-caret": "blink-caret .75s step-end infinite",
         "fade-in": "fade-in 10s ease-in infinite alternate",
-        "fade-away": "fade-away 1.5s"
       },
       transition: {
         "1250": "1250ms",
