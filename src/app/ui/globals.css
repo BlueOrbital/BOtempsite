@@ -131,6 +131,16 @@ body {
   background-color: #081521;
 }
 
+input,
+textarea {
+  background: none;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  text-wrap: wrap;
+  resize: none;
+  line-height: 1.5rem;
+}
+
 h2 {
   font-size: 3rem;
   font-weight: 300;

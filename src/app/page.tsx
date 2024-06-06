@@ -11,11 +11,9 @@ export default function Home() {
   const [userInput, setUserInput] = useState({
     title: `Fully dynamic, customised to your taste.`,
     para: `Dreaming is easy, but making it a reality is challenging.\n
-    We can design and develop the website you've been looking for; Whether
-    you know exactly what you're looking, or are still needing inspiration.\n
-    Going digital can be difficult, let us help and we can make it easy.
-    `,
-  })
+We can design and develop the website you've been looking for; Whether you know exactly what you're looking, or are still needing inspiration.\n
+Going digital can be difficult, let us help and we can make it easy.`,
+  });
 
   useEffect(() => {
     let interval1: undefined | NodeJS.Timeout;
@@ -68,12 +66,41 @@ export default function Home() {
           </p>
         </article>
       </section>
-      <section className="flex flex-row z-10 w-full h-auto items-start justify-items-end px-16 pt-40 pb-12 bg-gradient-to-b from-deepBlue to-midBlue">
-        <article className="w-2/5 h-fit">
-          <h2 className="mb-5">{userInput.title}</h2>
-          {renderLineBreaks(userInput.para)}
-        </article>
-        <div className="flex justify-end w-2/5 h-fit ml-auto"></div>
+      <section className="flex flex-row flex-wrap z-10 w-full h-auto items-start justify-items-end px-16 pt-40 pb-12 bg-gradient-to-b from-deepBlue to-midBlue">
+        <div className="flex w-full h-fit items-stretch flex-nowrap justify-between">
+          <div className="w-2/5 h-auto min-h-fit">
+            <h2 className="mb-5 h-fit">{userInput.title}</h2>
+          </div>
+          <div className="flex justify-end w-2/5 min-h-fit h-auto ml-auto">
+            <textarea
+              className="w-full min-h-fit mb-5 text-5xl leading-normal font-light tracking-tight text-balance overflow-hidden"
+              value={userInput.title}
+              onChange={(e): void => {
+                setUserInput({
+                  ...userInput,
+                  title: e.target.value,
+                });
+              }}
+            ></textarea>
+          </div>
+        </div>
+        <div className="flex w-full h-fit items-stretch">
+          <div className="w-2/5 h-fit">{renderLineBreaks(userInput.para)}</div>
+          <div className="flex justify-end w-2/5 min-h-fit h-auto ml-auto">
+            <textarea
+              className="w-full h-full mb-5 font-light tracking-tight text-balance overflow-hidden"
+              value={userInput.para}
+              onChange={(e) => {
+                setUserInput({
+                  ...userInput,
+                  para: e.target.value,
+                });
+              }}
+            ></textarea>
+          </div>
+        </div>
+      </section>
+      <section className="flex flex-row flex-wrap z-10 w-full h-auto items-start justify-items-end px-16 pt-40 pb-12 bg-midBlue">
       </section>
     </>
   );
