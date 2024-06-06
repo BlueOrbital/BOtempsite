@@ -2,12 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { homeMessages, fontStyles } from "./lib/staticArrays";
-import { doRandomise } from "./lib/utilities";
+import { doRandomise, renderLineBreaks } from "./lib/utilities";
 import colourBox from "./lib/colour-box";
 
 export default function Home() {
   const [message, setMessage] = useState(0);
   const [font, setFont] = useState(0);
+  const [userInput, setUserInput] = useState({
+    title: `Fully dynamic, customised to your taste.`,
+    para: `Dreaming is easy, but making it a reality is challenging.\n
+    We can design and develop the website you've been looking for; Whether
+    you know exactly what you're looking, or are still needing inspiration.\n
+    Going digital can be difficult, let us help and we can make it easy.
+    `,
+  })
 
   useEffect(() => {
     let interval1: undefined | NodeJS.Timeout;
@@ -32,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex flex-column flex-wrap z-10 w-full h-screen items-start justify-start justify-items-start p-16 bg-custom-blue bg-gradient-to-b from-midBlue to-deepBlue to-100%">
+      <section className="flex flex-column flex-wrap z-10 w-full h-screen items-start justify-start justify-items-start p-16 bg-gradient-to-b from-midBlue to-deepBlue to-100%">
         <div className="flex flex-row flex-wrap relative mt-56 h-auto w-full">
           <h1 className="w-full h-full mr-auto font-orbitron font-normal text-6xl tracking-wider lg:text-left sm:text-center sm:mx-auto">
             Welcome to BlueOrbital
@@ -44,10 +52,10 @@ export default function Home() {
           </h2>
         </div>
       </section>
-      <section className="flex flex-row z-10 w-full h-auto items-start justify-start justify-items-start p-16">
-        <div className="w-3/5 h-fit">{colourBox()}</div>
-        <article className="w-2/5 h-fit">
-          <h2 className="mb-5">Impossible, Made Possible</h2>
+      <section className="flex flex-row z-10 w-full h-auto items-start justify-start justify-items-start px-16 pt-40 pb-12">
+        <div className="w-2/5 h-fit">{colourBox()}</div>
+        <article className="w-2/5 h-fit ml-auto">
+          <h2 className="mb-5">Impossible, Made Possible.</h2>
           <p className="mb-2">
             This is web design. The limit is your imagination.
           </p>
@@ -59,6 +67,13 @@ export default function Home() {
             Through the latest frontend technologies, anything is possible.
           </p>
         </article>
+      </section>
+      <section className="flex flex-row z-10 w-full h-auto items-start justify-items-end px-16 pt-40 pb-12 bg-gradient-to-b from-deepBlue to-midBlue">
+        <article className="w-2/5 h-fit">
+          <h2 className="mb-5">{userInput.title}</h2>
+          {renderLineBreaks(userInput.para)}
+        </article>
+        <div className="flex justify-end w-2/5 h-fit ml-auto"></div>
       </section>
     </>
   );

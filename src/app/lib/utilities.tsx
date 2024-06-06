@@ -39,3 +39,13 @@ export function doRandomise(
     });
   }
 }
+
+export function renderLineBreaks(text: string):JSX.Element {
+  const formattedText = text.split('\n').map((line, index) => (
+    <p key={index}>
+      {line}
+      <br />
+    </p>
+  ));
+  return <>{formattedText}</>;
+};

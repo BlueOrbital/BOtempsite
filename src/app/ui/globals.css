@@ -140,10 +140,6 @@ h2 {
 
 /* `after:block after:relative after:-top-128 after:h-128 after:rounded after:bg-gradient-to-br` */
 @layer utilities {
-  .colouredBox.animateFade::after {
-    @apply animate-fade-out;
-  }
-
   .text-balance {
     text-wrap: balance;
   }
