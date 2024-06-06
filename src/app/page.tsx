@@ -73,7 +73,7 @@ Going digital can be difficult, let us help and we can make it easy.`,
           </div>
           <div className="flex justify-end w-2/5 min-h-fit h-auto ml-auto">
             <textarea
-              className="w-full min-h-fit mb-5 text-5xl leading-normal font-light tracking-tight text-balance overflow-hidden"
+              className="w-full min-h-fit mb-5 text-5xl leading-normal font-light text-wrap overflow-hidden"
               value={userInput.title}
               onChange={(e): void => {
                 setUserInput({
@@ -88,7 +88,7 @@ Going digital can be difficult, let us help and we can make it easy.`,
           <div className="w-2/5 h-fit">{renderLineBreaks(userInput.para)}</div>
           <div className="flex justify-end w-2/5 min-h-fit h-auto ml-auto">
             <textarea
-              className="w-full h-full mb-5 font-light tracking-tight text-balance overflow-hidden"
+              className="w-full h-full mb-5 font-light text-wrap overflow-hidden"
               value={userInput.para}
               onChange={(e) => {
                 setUserInput({
