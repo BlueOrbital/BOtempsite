@@ -1,8 +1,13 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+
   "extends": [
-    "eslint:all", 
-    "plugin:react/all", 
-    "plugin:@typescript-eslint/all",
+    "eslint:recommended", 
+    "plugin:react/recommended", 
+    "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals"
   ]
 }
