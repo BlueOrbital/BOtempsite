@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toDynamicColors, fromDynamicColors, beforeFromDynamicColors, beforeToDynamicColors, afterToDynamicColors, afterFromDynamicColors } from "./staticArrays";
 
-export default function colourBox():React.ReactElement {
+export default function colourBox():React.FunctionComponentElement<JSX.Element> {
     const [colorTo, setColorTo] = useState({init:'to-midGreyBlue', before:'before:to-midblue'});
     const [colorFrom, setColorFrom] = useState({init:'from-midBlue', before:'before:from-lightGreyBlue'});
     const [afterBlock, setAfterBlock] = useState({clicked:false, to:'after:to-midGreyBlue', from:'after:from-midBlue'})
