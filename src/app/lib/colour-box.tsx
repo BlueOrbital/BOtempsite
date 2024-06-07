@@ -1,5 +1,6 @@
 import React, { useState, JSX } from "react";
 import { toDynamicColors, fromDynamicColors, beforeFromDynamicColors, beforeToDynamicColors, afterToDynamicColors, afterFromDynamicColors } from "./staticArrays";
+import { before } from "node:test";
 
 interface CBProps {
     width: string;
@@ -42,6 +43,6 @@ export default function ColourBox(props: CBProps):React.FunctionComponentElement
     }
 
     return (
-        <div onClick={handleClick} className={`${props.width} ${props.height} rounded bg-gradient-to-br ${colorTo.init} ${colorFrom.init} before:block before:animate-fade-in before:${props.height} before:rounded before:bg-gradient-to-br ${colorTo.before} ${colorFrom.before} before:opacity-100 before:transition before:duration-1000 before:hover:opacity-0 ${afterBlock.clicked ? `after:block after:relative after:-top-128 after:${props.height} after:rounded after:bg-gradient-to-br ${afterBlock.from} ${afterBlock.to} after:animate-fade-out after:z-50` : `after:animate-none`}`}></div>
+        <div onClick={handleClick} className={`${props.width} ${props.height} rounded bg-gradient-to-br ${colorTo.init} ${colorFrom.init} before:block before:animate-fade-in before:w-full before:h-full before:rounded before:bg-gradient-to-br ${colorTo.before} ${colorFrom.before} before:opacity-100 before:transition before:duration-1000 before:hover:opacity-0 ${afterBlock.clicked ? `after:block after:relative after:-top-128 after:w-full after:h-full after:rounded after:bg-gradient-to-br ${afterBlock.from} ${afterBlock.to} after:animate-fade-out after:z-50` : `after:animate-none`}`}></div>
     );
 }
