@@ -1,3 +1,4 @@
+import React from 'react';
 import Navlinks from './nav-links';
 
 export default function NavBar() {

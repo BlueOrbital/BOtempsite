@@ -1,5 +1,6 @@
 'use client'
 
+import React from "react";
 import home from "@/../public/Icons/home.svg";
 import services from "@/../public/Icons/services.svg";
 import portfolio from "@/../public/Icons/portfolio.svg";

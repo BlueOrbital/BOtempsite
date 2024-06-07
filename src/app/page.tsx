@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { homeMessages, fontStyles } from "./lib/staticArrays";
 import { doRandomise, renderLineBreaks } from "./lib/utilities";
 import ColourBox from "./lib/colour-box";

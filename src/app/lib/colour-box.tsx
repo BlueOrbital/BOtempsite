@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { toDynamicColors, fromDynamicColors, beforeFromDynamicColors, beforeToDynamicColors, afterToDynamicColors, afterFromDynamicColors } from "./staticArrays";
 
 interface CBProps {
