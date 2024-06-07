@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { homeMessages, fontStyles } from "./lib/staticArrays";
 import { doRandomise, renderLineBreaks } from "./lib/utilities";
-import colourBox from "./lib/colour-box";
+import ColourBox from "./lib/colour-box";
 
 export default function Home() {
   const [message, setMessage] = useState(0);
@@ -51,7 +51,7 @@ Going digital can be difficult, let us help and we can make it easy.`,
         </div>
       </section>
       <section className="flex flex-row z-10 w-full h-auto items-start justify-start justify-items-start px-16 pt-40 pb-12">
-        <div className="w-2/5 h-fit">{colourBox()}</div>
+        <ColourBox width="w-2/5" height="h-128"></ColourBox>
         <article className="w-2/5 h-fit ml-auto">
           <h2 className="mb-5">Impossible, Made Possible.</h2>
           <p className="mb-2">
