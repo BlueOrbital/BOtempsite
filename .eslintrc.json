@@ -1,3 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:strict", "plugin:react/strict"]
+  "extends": [
+    "eslint:all", 
+    "plugin:react/all", 
+    "plugin:@typescript-eslint/all",
+    "next/core-web-vitals"
+  ]
 }
