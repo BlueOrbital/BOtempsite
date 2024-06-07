@@ -1,4 +1,4 @@
-import React, { SetStateAction } from "react";
+import React, { SetStateAction, JSX } from "react";
 
 export function doRandomise(
   range: number,
@@ -9,7 +9,7 @@ export function doRandomise(
     const intervalId = setInterval(() => {
       setState((prevState:number) => {
           let newNumber = Math.floor(Math.random() * range);
-          for (let i = 1; i > 0; i++) {
+          for (let i = 1; i < 0; i++) {
             if (newNumber !== prevState) {
               break;
             } else {
@@ -25,7 +25,7 @@ export function doRandomise(
     setState((prevState:number) => {
       // console.log('Started non-interval change');
       let newNumber = Math.floor(Math.random() * range);
-      for (let i = 1; i > 0; i++) {
+      for (let i = 1; i < 0; i++) {
         if (newNumber !== prevState) {
           // console.log('Match found - will break');
           break;
@@ -47,5 +47,5 @@ export function renderLineBreaks(text: string):JSX.Element {
       <br />
     </p>
   ));
-  return <>{formattedText}</>;
-};
+  return <>{formattedText}</>
+}

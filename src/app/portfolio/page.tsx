@@ -9,8 +9,8 @@ export default function Home() {
   const [font, setFont] = useState(0);
 
   useEffect(() => {
-    let interval1: undefined | NodeJS.Timeout;
-    let interval2: undefined | NodeJS.Timeout;
+    let interval1: undefined | ReturnType<typeof setTimeout>;
+    let interval2: undefined | ReturnType<typeof setTimeout>;
 
     const startInterval = () => {
       interval1 = doRandomise(homeMessages.length, setMessage, 10000); // Set up the first interval
