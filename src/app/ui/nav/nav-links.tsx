@@ -40,7 +40,7 @@ export default function Navlinks() {
                             }
                         )}
                     >
-                        <icon />
+                        {/* <icon /> */}
                         <p className='font-raleway'>{link.name}</p>
                     </Link>
                 )
