@@ -1,6 +1,5 @@
 import React, { useState, JSX } from "react";
 import { toDynamicColors, fromDynamicColors, beforeFromDynamicColors, beforeToDynamicColors, afterToDynamicColors, afterFromDynamicColors } from "./staticArrays";
-import { before } from "node:test";
 
 interface CBProps {
     width: string;
