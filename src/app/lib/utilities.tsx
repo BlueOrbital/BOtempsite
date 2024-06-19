@@ -49,3 +49,15 @@ export function renderLineBreaks(text: string):JSX.Element {
   ));
   return <>{formattedText}</>
 }
+
+export const reorderList = (originalList:Array<string>):Array<string> => {
+  const oldOrder = [...originalList];
+  const newOrder = [];
+  let selector: number;
+  for (let i = 0; i < originalList.length; i++) {
+      selector = Math.floor(Math.random()*(oldOrder.length));
+      newOrder.push(oldOrder[selector]);
+      oldOrder.splice(selector, 1);
+  }
+  return newOrder;
+}
