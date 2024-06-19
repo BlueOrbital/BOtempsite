@@ -39,7 +39,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={inter.className}>
-        <header className="fixed w-full h-16 z-50 px-16 border-b-0 border-b-lightGrey">
+        <header className="fixed w-full h-20 z-50 px-16 pb-4 border-b-0 border-b-lightGrey">
           <NavBar />
         </header>
         <main className="flex flex-row flex-wrap max-w-100vw h-auto min-h-screen justify-center">
