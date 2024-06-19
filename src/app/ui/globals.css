@@ -132,13 +132,30 @@ body {
 }
 
 input,
-textarea {
+textarea,
+.input-with-icon {
   background: none;
-  border: 1px solid whitesmoke;
-  border-radius: 10px;
+  border: 1px solid #b0c0cf7a;
+  border-radius: 15px;
   resize: none;
   line-height: 1.5rem;
   letter-spacing: -0.025rem;
+}
+
+.input-with-icon {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+input.input-with-icon-child,
+input.input-with-icon-child:active {
+  outline: none;
+  background: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 h2 {
