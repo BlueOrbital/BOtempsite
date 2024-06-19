@@ -38,7 +38,7 @@ Going digital can be difficult, let us help and we can make it easy.`,
 
   return (
     <>
-      <section className="flex flex-column flex-wrap z-10 w-full h-screen items-start justify-start justify-items-start p-16 bg-gradient-to-b from-midBlue to-deepBlue to-100%">
+      <section className="flex flex-column flex-wrap z-10 w-full h-screen items-start justify-start justify-items-start p-20 bg-gradient-to-b from-midBlue to-deepBlue to-100%">
         <div className="flex flex-row flex-wrap relative mt-56 h-auto w-full">
           <h1 className="w-full h-full mr-auto font-orbitron font-normal text-6xl tracking-wider lg:text-left sm:text-center sm:mx-auto">
             Welcome to BlueOrbital
@@ -69,11 +69,11 @@ Going digital can be difficult, let us help and we can make it easy.`,
       <section className="flex flex-row flex-wrap z-10 w-full h-auto items-start justify-items-end px-16 pt-40 pb-12 bg-gradient-to-b from-deepBlue to-midBlue">
         <div className="flex w-full h-fit items-stretch flex-nowrap justify-between">
           <div className="w-2/5 h-auto min-h-fit">
-            <h2 className="mb-5 h-fit">{userInput.title}</h2>
+            <h2 className="mb-5 h-fit p-4 -ml-4">{userInput.title}</h2>
           </div>
           <div className="flex justify-end w-2/5 min-h-fit h-auto ml-auto">
             <textarea
-              className="w-full min-h-fit mb-5 text-5xl leading-normal font-light text-wrap overflow-hidden"
+              className="w-full min-h-fit mb-5 p-4 text-5xl leading-normal font-light text-wrap overflow-hidden"
               value={userInput.title}
               onChange={(e): void => {
                 setUserInput({
@@ -85,10 +85,10 @@ Going digital can be difficult, let us help and we can make it easy.`,
           </div>
         </div>
         <div className="flex w-full h-fit items-stretch">
-          <div className="w-2/5 h-fit">{renderLineBreaks(userInput.para)}</div>
+          <div className="w-2/5 h-fit p-4 -ml-4">{renderLineBreaks(userInput.para)}</div>
           <div className="flex justify-end w-2/5 min-h-fit h-auto ml-auto">
             <textarea
-              className="w-full h-full mb-5 font-light text-wrap overflow-hidden"
+              className="w-full h-full mb-5 p-4 font-light text-wrap overflow-hidden"
               value={userInput.para}
               onChange={(e) => {
                 setUserInput({
