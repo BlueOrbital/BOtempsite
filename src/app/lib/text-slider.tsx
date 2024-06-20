@@ -25,7 +25,7 @@ export default function TextSlider(
               {index % 2 !== 0 && (
                 <h2
                   className={`${
-                    fadeAnimationSelector[Math.floor(Math.random() * 4)]
+                    fadeAnimationSelector[Math.floor(Math.random() * (fadeAnimationSelector.length-1))]
                   } opacity-0 inline mx-2 font-thin min-w-fit overflow-clip}`}
                 >
                   {message}
@@ -33,7 +33,7 @@ export default function TextSlider(
               )}
               {index % 2 === 0 && (
                 <h2
-                  className={`${fadeAnimationSelector[Math.floor(Math.random() * 4)]} opacity-0 inline mx-2 font-light min-w-fit overflow-clip}`}
+                  className={`${fadeAnimationSelector[Math.floor(Math.random() * (fadeAnimationSelector.length-1))]} opacity-0 inline mx-2 font-light min-w-fit overflow-clip}`}
                 >
                   {message}
                 </h2>
