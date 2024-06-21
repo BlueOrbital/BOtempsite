@@ -46,7 +46,7 @@ export default function TextSlider(
   const [initialLoad, setInitialLoad] = useState(true);
 
   const checkMatch = (searchParam:string, referenceParam:string, givenOpacity:string):string => {
-    const loopDur = referenceParam.length - searchParam.length;
+    const loopDur = referenceParam.length - searchParam.length + 1;
     let match = false;
     if (props.search === "") {
       return givenOpacity;
