@@ -51,7 +51,7 @@ export default function TextSlider(
     if (props.search === "") {
       return givenOpacity;
     } else {
-      for (let i = 0; i < loopDur; i++) {
+      for (let i = 0; i < loopDur; i++) { //Appears to be out by 1 ? i.e last letters don't work ?
         const referenceSection = referenceParam.slice(i, searchParam.length+i);
         if (referenceSection.toLowerCase() === searchParam.toLowerCase()) {
           match = true;
