@@ -219,14 +219,14 @@ export const afterFromDynamicColors = [
 ]
 
 export const fadeInAnimationSelector = [
-    "animate-fade-in-forwards-1",
-    "animate-fade-in-forwards-1.5",
-    "animate-fade-in-forwards-2",
-    "animate-fade-in-forwards-2.5",
-    "animate-fade-in-forwards-3",
-    "animate-fade-in-forwards-3.5",
-    "animate-fade-in-forwards-4",
-    "animate-fade-in-forwards-4.5",
+    "animate-fade-in-1",
+    "animate-fade-in-1.5",
+    "animate-fade-in-2",
+    "animate-fade-in-2.5",
+    "animate-fade-in-3",
+    "animate-fade-in-3.5",
+    "animate-fade-in-4",
+    "animate-fade-in-4.5",
 ]
 
 export const fadeOutAnimationSelector = [

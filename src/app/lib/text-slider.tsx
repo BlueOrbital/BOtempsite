@@ -6,6 +6,7 @@ import type { JSX } from "react";
 interface TSProps {
   repeat: number;
   shuffle: boolean;
+  search: string;
 }
 
 type PrintDivReturn = { 
@@ -18,18 +19,24 @@ type Content = {
   currentList: undefined | Array<string[]>,
 }
 
-const Animate = (direction: "in"|"out"):string => {
-  let animation:string; 
+const Animate = (direction: "in"|"out"):{animation:string, opacity:string} => { /// Remove this and use transition instead
+  let animation:string;
+  let opacity:string; 
   if (direction === 'in') {
-    animation = `${fadeInAnimationSelector[Math.floor(Math.random() * (fadeInAnimationSelector.length-1))]} opacity-0`
+    animation = `${fadeInAnimationSelector[Math.floor(Math.random() * (fadeInAnimationSelector.length-1))]}`;
+    opacity = `opacity-100`;
   } else if (direction === 'out') {
-    animation = `${fadeOutAnimationSelector[Math.floor(Math.random() * (fadeOutAnimationSelector.length-1))]} opacity-1`
+    animation = `${fadeOutAnimationSelector[Math.floor(Math.random() * (fadeOutAnimationSelector.length-1))]}`;
+    opacity = `opacity-0`;
   } else {
     throw ((error:Error) => {
       console.log(`Issue with animation type: ${error}`);
     });
   }
-  return animation;
+  return {
+    animation: animation,
+    opacity: opacity,
+  }
 }
 
 export default function TextSlider(
@@ -37,6 +44,23 @@ export default function TextSlider(
 ): React.FunctionComponentElement<JSX.Element> {
   const [content, setContent] = useState<Content>({jsx:undefined, currentList:undefined});
   const [initialLoad, setInitialLoad] = useState(true);
+
+  const checkMatch = (searchParam:string, referenceParam:string, givenOpacity:string):string => {
+    const loopDur = referenceParam.length - searchParam.length;
+    let match = false;
+    if (props.search === "") {
+      return givenOpacity;
+    } else {
+      for (let i = 0; i < loopDur; i++) {
+        const referenceSection = referenceParam.slice(i, searchParam.length+i);
+        if (referenceSection.toLowerCase() === searchParam.toLowerCase()) {
+          match = true;
+        }
+      }
+    }
+    return match ? givenOpacity : "opacity-10";
+  }
+
 
   const printDiv = (repeat: number, content: undefined | Array<string[]>, direction: "in"|"out"):PrintDivReturn => {
     const element: JSX.Element[] = [];
@@ -46,9 +70,11 @@ export default function TextSlider(
     } else {
       list = content;
     }
+    // console.log(content);
     for (let i = 0; i < repeat - 1; i++) {
       if (content === undefined) {
         list.push(reorderList(homeMessages));
+        console.log("Redoing");
       }
       element.push(
         <div
@@ -57,16 +83,23 @@ export default function TextSlider(
         >
           {list[i].map((message: string, index: number) => (
             <React.Fragment key={`${element.length}-${i}-index-${index}`}>
-              {index % 2 !== 0 && (
+              {index % 3 == 1 && (
                 <h2
-                  className={`${Animate(direction)} inline mx-2 font-thin min-w-fit overflow-clip}`}
+                  className={`${Animate(direction).animation} inline mx-2 font-thin min-w-fit overflow-clip ${checkMatch(props.search,list[i][index],Animate(direction).opacity)} transition duration-1000`}
                 >
                   {message}
                 </h2>
               )}
-              {index % 2 === 0 && (
+              {index % 3 === 2 && (
                 <h2
-                  className={`${Animate(direction)} inline mx-2 font-light min-w-fit overflow-clip}`}
+                  className={`${Animate(direction).animation} inline mx-2 font-light min-w-fit overflow-clip ${checkMatch(props.search,list[i][index],Animate(direction).opacity)} transition duration-1000`}
+                >
+                  {message}
+                </h2>
+              )}
+              {index % 3 === 0 && (
+                <h2
+                  className={`${Animate(direction).animation} inline mx-2 font-extralight min-w-fit overflow-clip ${checkMatch(props.search,list[i][index],Animate(direction).opacity)} transition duration-1000`}
                 >
                   {message}
                 </h2>
@@ -86,7 +119,7 @@ export default function TextSlider(
     if (initialLoad) {
       setInitialLoad(false);
       setContent(printDiv(props.repeat, undefined,"in"));
-    } else {
+    } else if (props.shuffle) {
       setContent({
         ...content,
         jsx: printDiv(props.repeat, content.currentList, "out").jsx
@@ -97,6 +130,15 @@ export default function TextSlider(
       }, 4500);
     }
   }, [props.repeat, props.shuffle]);
+
+  useEffect((): void => {
+    if (content.currentList !== undefined) {
+      setContent({
+        ...content,
+        jsx: printDiv(props.repeat, content.currentList, "in").jsx
+      });
+    }
+  }, [props.search]);
 
   return (
     <>
