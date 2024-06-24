@@ -218,24 +218,18 @@ export const afterFromDynamicColors = [
     "after:from-color10-dark",
 ]
 
-export const fadeInAnimationSelector = [
-    "animate-fade-in-1",
-    "animate-fade-in-1.5",
-    "animate-fade-in-2",
-    "animate-fade-in-2.5",
-    "animate-fade-in-3",
-    "animate-fade-in-3.5",
-    "animate-fade-in-4",
-    "animate-fade-in-4.5",
+export const fadeTransitionTimerSelector = [
+    "duration-1500",
+    "duration-2500",
 ]
 
-export const fadeOutAnimationSelector = [
-    "animate-fade-out-forwards-1",
-    "animate-fade-out-forwards-1.5",
-    "animate-fade-out-forwards-2",
-    "animate-fade-out-forwards-2.5",
-    "animate-fade-out-forwards-3",
-    "animate-fade-out-forwards-3.5",
-    "animate-fade-out-forwards-4",
-    "animate-fade-out-forwards-4.5",
+export const fadeTransitionDelaySelector = [
+    "delay-750",
+    "delay-1000",
+    "delay-1250",
+    "delay-1750",
+    "delay-1000",
+    "delay-2000",
+    "delay-3000",
+    "delay-4000",
 ]
