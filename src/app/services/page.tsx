@@ -68,8 +68,8 @@ export default function Services() {
         </div>
         <TextSlider repeat={repeat} shuffle={doShuffle} search={searchValue}/>
       </section>
-      <section className="flex flex-column flex-wrap z-10 w-full h-screen max-h-screen overflow-clip items-start justify-start justify-items-start pt-20 bg-gradient-to-b from-deepBlue to-midBlue to-100%">
-
+      <section className="flex flex-row flex-wrap z-10 w-full h-screen max-h-screen overflow-clip py-20 px-16 bg-gradient-to-b from-deepBlue to-midBlue to-100%">
+        <div className="border-lightBlue border flex-1 mt-8"></div>
       </section>
     </>
   );
