@@ -10,6 +10,30 @@ export const homeMessages = [
     "UI/UX Design",
 ]
 
+export const textSliderMessages = [
+    "Bespoke Web Design",
+    "E-Commerce",
+    "Full-Stack Web Applications",
+    "Apps",
+    "Website Glow-ups",
+    "Dynamic Content",
+    "Shoppify, Wordpress, Wix, Squarespace",
+    "Database Management",
+    "Custom Domains and Emails",
+    "Online Consultations",
+    "UI/UX Design",
+    "Tech Solutions",
+    "React Typescript",
+    "NextJS",
+    "Freelance projects",
+    "Travel Sites",
+    "Site Plugins",
+    "Frontend Development",
+    "Backend Development",
+    "Refresh your site",
+    "Web Support",
+]
+
 export const fontStyles = [
     "font-raleway",
     "font-kumbh",

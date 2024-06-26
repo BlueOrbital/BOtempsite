@@ -1,4 +1,4 @@
-import { fadeTransitionTimerSelector, fadeTransitionDelaySelector, homeMessages } from "./staticArrays";
+import { fadeTransitionTimerSelector, fadeTransitionDelaySelector, textSliderMessages } from "./staticArrays";
 import { reorderList } from "./utilities";
 import React, { useCallback, useEffect, useReducer, useState} from "react";
 import type { JSX } from "react";
@@ -123,7 +123,7 @@ export default function TextSlider(
     }
     for (let i = 0; i < repeat - 1; i++) {
       if (reset || content.currentList === undefined) {
-        list.push(reorderList(homeMessages));
+        list.push(reorderList(textSliderMessages));
       }
       element.push(
         <div
@@ -133,25 +133,34 @@ export default function TextSlider(
           {list[i].map((message: string, index: number) => (
             <React.Fragment key={`${element.length}-${i}-index-${index}`}>
               {index % 3 === 1 && (
-                <h2
-                  className={`inline mx-2 font-thin min-w-fit overflow-clip transition-opacity ${checkMatch(search,list[i][index],TransitionSettings(direction).opacity,null, null).opacity} ${checkMatch(search,list[i][index],null,TransitionSettings(direction).duration,null).duration} ${checkMatch(search,list[i][index],null,null,TransitionSettings(direction).delay).delay}`}
+                <a 
+                  href={"#"}
+                  className={`inline mx-2 min-w-fit overflow-clip transition-opacity ${checkMatch(search,list[i][index],TransitionSettings(direction).opacity,null, null).opacity} ${checkMatch(search,list[i][index],null,TransitionSettings(direction).duration,null).duration} ${checkMatch(search,list[i][index],null,null,TransitionSettings(direction).delay).delay}`}
                 >
-                  {message}
-                </h2>
+                  <h2 className="font-thin">
+                    {message}
+                  </h2>
+                </a>
               )}
               {index % 3 === 2 && (
-                <h2
-                  className={`inline mx-2 font-light min-w-fit overflow-clip transition-opacity ${checkMatch(search,list[i][index],TransitionSettings(direction).opacity,null, null).opacity} ${checkMatch(search,list[i][index],null,TransitionSettings(direction).duration,null).duration} ${checkMatch(search,list[i][index],null,null,TransitionSettings(direction).delay).delay}`}
+                <a 
+                  href={"#"}
+                  className={`inline mx-2 min-w-fit overflow-clip transition-opacity ${checkMatch(search,list[i][index],TransitionSettings(direction).opacity,null, null).opacity} ${checkMatch(search,list[i][index],null,TransitionSettings(direction).duration,null).duration} ${checkMatch(search,list[i][index],null,null,TransitionSettings(direction).delay).delay}`}
                 >
-                  {message}
-                </h2>
+                  <h2 className="font-light">
+                    {message}
+                  </h2>
+                </a>
               )}
               {index % 3 === 0 && (
-                <h2
-                  className={`inline mx-2 font-extralight min-w-fit overflow-clip transition-opacity ${checkMatch(search,list[i][index],TransitionSettings(direction).opacity,null, null).opacity} ${checkMatch(search,list[i][index],null,TransitionSettings(direction).duration,null).duration} ${checkMatch(search,list[i][index],null,null,TransitionSettings(direction).delay).delay}`}
+                <a 
+                  href={"#"}
+                  className={`inline mx-2 min-w-fit minoverflow-clip transition-opacity ${checkMatch(search,list[i][index],TransitionSettings(direction).opacity,null, null).opacity} ${checkMatch(search,list[i][index],null,TransitionSettings(direction).duration,null).duration} ${checkMatch(search,list[i][index],null,null,TransitionSettings(direction).delay).delay}`}
                 >
-                  {message}
-                </h2>
+                  <h2 className="font-extralight">
+                    {message}
+                  </h2>
+                </a>
               )}
             </React.Fragment>
           ))}
