@@ -7,7 +7,7 @@ import refresh from "../../../public/Icons/refresh.svg";
 import TextSlider from "../lib/text-slider";
 
 export default function Services() {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState<string>("");
   const [doShuffle, setDoShuffle] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const repeat = 13; //Number of rows of text to display - will change depending on screen size
@@ -22,9 +22,10 @@ export default function Services() {
     setDoShuffle(true);
     setIsDisabled(true);
     setTimeout(() => {
+      console.log("turning off shuffle");
       setIsDisabled(false)
       setDoShuffle(false);
-    }, 12000);
+    }, 7000);
   };
 
   return (
